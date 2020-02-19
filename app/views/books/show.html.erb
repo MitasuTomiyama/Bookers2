@@ -7,7 +7,7 @@
 			<td><%= @book.title %></td>
 			<td><%= @book.body %></td>
 			<td><%= link_to "Edit", edit_user_path(@book) %></td>
-			<td><%= link_to "destroy", books_path(book), method: :delete, data: {comfirm: "本当に消しますか？"} %></td>
+			<td><%= link_to "destroy", books_path(@book), method: :delete, data: {comfirm: "本当に消しますか？"} %></td>
 		</tr>
 	</tbody>
 </table>

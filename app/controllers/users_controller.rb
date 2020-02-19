@@ -25,5 +25,10 @@ class UsersController < ApplicationController
   def top
   end
 
+  private
+  def user_params
+    prams.require(:user).permit(:name, :introduction, :user_imag)
+  end
+
 
 end

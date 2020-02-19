@@ -1,5 +1,7 @@
 <h1>User info</h1>
 
+<%= flash[:notice] %>
+
 <h1>Books</h1>
 <table>
 	<tr>
@@ -23,7 +25,7 @@
 
 <div class="profile-container">
     <h3 class="profile-name"><%= @user.name %></h3>
-    <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
+    <%= attachment_image_tag @user, :user_imag, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
     <h3 class="profile-introduction"><%= @user.introduction %></h3>
 	<% if @user.id == current_user.id %>
         <p><%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-right" %></p>
