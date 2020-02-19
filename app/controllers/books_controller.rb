@@ -8,7 +8,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])
+    @book = Book.find(carrent_user)
   end
 
   def edit
