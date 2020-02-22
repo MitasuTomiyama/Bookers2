@@ -4,14 +4,16 @@
 	<tbody>
 		<tr>
 		   <th>Image</th>
-		   <th>Title</th>
-		   <th>Opinion</th>
+		   <th>name</th>
+		   <th colspan = "1" ></th>
 		</tr>
-		<tr>
-			<td>@user.imag</td>
-			<td>@book.title</td>
-			<td>@book.body</td>
+		   <% @users.each do |user| %>
+		 <tr>
+			<td><%= user.profile_image %></td>
+			<td><%= user.name %></td>
+			<td><%= link_to "Show", user_path(current_user) %></td>
 		</tr>
+		  <% end %>
 	</tbody>
 </table>
 

@@ -3,8 +3,7 @@ class BooksController < ApplicationController
    before_action :authenticate_user!
 
   def index
-    @book = Book.new
-    @books = Book.all
+    @books = Book.page(params[:page]).reverse_order
   end
 
   def show
@@ -28,12 +27,20 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    book = Book.find(params[:id])
+    book.destroy
+    redirect_to books_path
   end
 
   def update
-    @book = Book.find(params[:id])
-    
-    redirect_to book_path(params[:id])
+    book = Book.find(params[:id])
+    if
+      book.update(book_params)
+      redirect_to book_path(params[:id])
+    else
+      @book = book
+      render action: :edit
+    end
   end
 
   private
