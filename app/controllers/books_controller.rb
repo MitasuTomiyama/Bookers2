@@ -3,11 +3,15 @@ class BooksController < ApplicationController
    before_action :authenticate_user!
 
   def index
-    @books = Book.page(params[:page]).reverse_order
+    @books = Book.all
+    @user = current_user
+    @book = Book.new
   end
 
   def show
-    @book = Book.find(params[:id])
+    @book_id = Book.find(params[:id])
+    @user = User.find(params[:id])
+    @book = Book.new
   end
 
   def edit
@@ -46,6 +50,10 @@ class BooksController < ApplicationController
   private
   def book_params
     params.require(:book).permit(:title, :body)
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :introduction, :profile_image_id)
   end
 
 end
