@@ -2,12 +2,14 @@
 
 <table>
  <tr>
- 	<th colspan="1"></th>
+ 	<th colspan= "1" ></th>
 	<th>Title</th>
 	<th>Opinion</th>
+	<th colspan= "2" ></th>
  </tr>
 
  <tr>
+ 	<td><%= attachment_image_tag book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
 	<td><%= @book_id.title %></td>
 	<td><%= @book_id.body %></td>
 	<td><%= link_to "Edit", edit_book_path(@book_id) %></td>
