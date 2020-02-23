@@ -9,8 +9,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body>
-  <nav>
+<header>
+  <div>
     <ul class="nav navbar-nav navbar-right">
      <% if user_signed_in? %>
 
@@ -49,9 +49,12 @@
 
      <% end %>
    </ul>
- </nav>
+ </div>
 
  <%= yield %>
  
-</body>
+</header>
+
+<footer>
+  <p>CopyRight Infraop.inc</p>
 </html>
