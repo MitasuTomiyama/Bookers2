@@ -1,6 +1,8 @@
-<h1>User info</h1>
 
-<%= flash[:notice] %>
+<%# 複数インスタンス変数のある、部分テンプレートは下記のように記述　#%>
+<%= render 'users/profile', { user: @user, book: @book } %>
+
+
 
 <h1>Books</h1>
 <table>
@@ -21,11 +23,6 @@
 		<% end %>
 	</tbody>
 </table>
-
-
-<%# 複数インスタンス変数のある、部分テンプレートは下記のように記述　#%>
-<%= render 'users/profile', { user: @user, book: @book } %>
-
 
 
 

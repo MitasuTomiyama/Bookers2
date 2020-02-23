@@ -9,6 +9,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
+<body>
+
 <header>
   <div>
     <ul class="nav navbar-nav navbar-right">
@@ -51,10 +53,17 @@
    </ul>
  </div>
 
- <%= yield %>
- 
 </header>
+
+
+  <%= render 'layouts/notifications' %>
+  <%= yield %>
+
 
 <footer>
   <p>CopyRight Infraop.inc</p>
+</footer>
+
+</body>
+
 </html>
