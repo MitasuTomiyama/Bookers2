@@ -21,7 +21,7 @@
      </li>
 
      <li class="">
-       <%= link_to "User", users_path %>
+       <%= link_to "Users", users_path %>
      </li>
 
      <li class="">
@@ -29,7 +29,7 @@
      </li>
 
      <li class="">
-       <%= link_to "log out", destroy_user_session_path, method: :delete %>
+       <%= link_to "logout", destroy_user_session_path, method: :delete %>
      </li>
      <% else %>
 
@@ -46,7 +46,7 @@
      </li>
 
      <li class="">
-       <%= link_to "log in", user_session_path %>
+       <%= link_to "login", user_session_path %>
      </li>
 
      <% end %>
