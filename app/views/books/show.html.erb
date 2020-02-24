@@ -16,7 +16,10 @@
  	<td><%= link_to @book_id.user.name, user_path(@book_id.user) %></td>
 	<td><%= @book_id.title %></td>
 	<td><%= @book_id.body %></td>
+
+	<% if @book_id.user == current_user %>
 	<td><%= link_to "Edit", edit_book_path(@book_id) %></td>
 	<td><%= link_to "Destroy", book_path(@book_id), method: :delete, data: {confirm: "本当に消しますか?"} %></td>
+	<% end %>
 </tr>
 </table>
