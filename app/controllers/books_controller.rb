@@ -51,21 +51,16 @@ class BooksController < ApplicationController
   end
 
 
-  end
-
 
   private
   def book_params
     params.require(:book).permit(:title, :body)
   end
 
-  def user_params
-    params.require(:user).permit(:name, :introduction, :profile_image_id)
-  end
   def corrent_user
       book = Book.find(params[:id])
       if current_user.id != book.user_id
         redirect_to books_path
+      end
     end
-
 end
