@@ -3,7 +3,7 @@
 
 <h1>Book detail</h1>
 
-<table>
+<table class="table table-striped">
  <tr>
  	<th colspan= "1" ></th>
 	<th>Title</th>
@@ -12,8 +12,8 @@
  </tr>
 
  <tr>
- 	<td><%= attachment_image_tag @book_id.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></td>
- 	<td><%= link_to @book_id.user.name, user_path(@book_id.user) %></td>
+ 	<td><%= attachment_image_tag @book_id.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
+ 	<%= link_to @book_id.user.name, user_path(@book_id.user) %></td>
 	<td><%= @book_id.title %></td>
 	<td><%= @book_id.body %></td>
 
