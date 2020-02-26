@@ -15,3 +15,35 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+header {
+	min-heigt: 50px;
+}
+
+.navbar {
+	border-radius: 0px !important;
+}
+
+.clearfix {
+	content: "";
+	clear: both;
+}
+
+.reset-styl {
+	.navbar-fixed-top {
+	position: initial;
+	}
+}
+
+.head-nav {
+	padding: 10px;
+}
+
+.field {
+	margin-bottom: 5px;
+}
+
+
+footer {
+	margin-top: 10px;
+}
